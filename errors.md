@@ -119,7 +119,7 @@
 ## 6. KB-NA-003
 
 - 问题/路由：翠竹厅最多能容纳多少人？
-- 期望：{"answer_points": null, "cited_doc_ids": null, "refused": null}
+- 期望：{"answerable": false}
 - 错误输出（原始，逐字）：
   ```json
   {

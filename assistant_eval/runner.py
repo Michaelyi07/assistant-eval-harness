@@ -77,7 +77,7 @@ def _mismatch(item: dict, resp: dict) -> dict | None:
         if not ann["answerable"]:
             if not resp["refused"]:
                 return _err(item, resp, ["no-answer item was answered instead of refused"],
-                            ["answer_points", "cited_doc_ids", "refused"])
+                            ["answerable"])
             return None
         problems: list[str] = []
         if resp["refused"]:
