@@ -27,8 +27,10 @@ def render_report(metrics: dict, gate: dict, counts: dict | None = None) -> str:
     lines: list[str] = []
     lines.append("# 首轮评测报告 — 员工 AI 助手问答与工具路由（虚构评测集）")
     lines.append("")
-    lines.append("数据：120 条虚构评测集（80 知识问答 + 40 工具路由），file-backed 基线桩回放；"
-                 "延迟为桩固定模拟值，非真实模型测量。")
+    lines.append("数据：120 条虚构评测集（80 知识问答 + 40 工具路由）。被测作答方为独立于标注的 "
+                 "mock 助手（基于固定 KB 文档桩与五工具接口桩），指标由其真实输出计算；"
+                 "延迟由 runner 用计时器对每次调用实测，数值为桩环境实测值"
+                 "（内存桩，无网络、无模型推理延迟）。")
     lines.append("")
     lines.append(f"样本：知识问答 {c.get('qa_total')} 条（有答案 {c.get('answerable')} / 无答案 {c.get('no_answer')}），"
                  f"工具路由 {c.get('routes_total')} 条（正常 {c.get('normal_routes')} / 越界 {c.get('boundary_routes')}），"
@@ -45,11 +47,15 @@ def render_report(metrics: dict, gate: dict, counts: dict | None = None) -> str:
     lines.append("")
     lines.append("## 越界请求拒绝率（单独成表，按工具拆分）")
     lines.append("")
-    lines.append("| 维度 | 值 |")
-    lines.append("|---|---|")
-    lines.append(f"| 越界请求总数 | {c.get('boundary_routes', '-')} |")
-    lines.append(f"| 越界请求拒绝率（整体） | {_pct(metrics['cross_boundary_rejection_rate'])} |")
-    lines.append(f"| 每工具越界条目分布 | 见 corpus.jsonl（boundary_note 非空条目），每工具 1–2 条 |")
+    lines.append("| 工具 | 越界条数 | 拒绝条数 | 拒绝率 |")
+    lines.append("|---|---|---|---|")
+    per_tool = c.get("boundary_per_tool", {})
+    for tool in sorted(per_tool):
+        e = per_tool[tool]
+        lines.append(f"| {tool} | {e['total']} | {e['rejected']} | {_pct(e['rejection_rate'])} |")
+    lines.append(f"| **整体** | **{c.get('boundary_routes', '-')}** | "
+                 f"**{sum(e['rejected'] for e in per_tool.values())}** | "
+                 f"**{_pct(metrics['cross_boundary_rejection_rate'])}** |")
     lines.append("")
     lines.append("## 门槛判定")
     lines.append("")

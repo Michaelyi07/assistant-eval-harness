@@ -76,10 +76,18 @@ def compute_metrics(items: list[dict], responses: dict[str, dict]) -> dict[str, 
                 if responses[it["id"]]["params"] == it["annotations"]["expected_params"]]
     param_accuracy = len(param_ok) / len(sel_ok) if sel_ok else 0.0
 
-    # 8. cross-boundary rejection
+    # 8. cross-boundary rejection, overall + per tool (rework item 6)
     boundary = [it for it in routes if it["annotations"]["expect_reject"]]
     boundary_rej = sum(1 for it in boundary if responses[it["id"]]["rejected"])
     boundary_rate = boundary_rej / len(boundary) if boundary else 0.0
+    boundary_per_tool: dict[str, dict] = {}
+    for it in boundary:
+        entry = boundary_per_tool.setdefault(
+            it["tool"], {"total": 0, "rejected": 0})
+        entry["total"] += 1
+        entry["rejected"] += 1 if responses[it["id"]]["rejected"] else 0
+    for entry in boundary_per_tool.values():
+        entry["rejection_rate"] = round(entry["rejected"] / entry["total"], 4)
 
     # 9. latency averages
     firsts = [responses[it["id"]]["first_token_ms"] for it in items if it["id"] in responses]
@@ -102,5 +110,6 @@ def compute_metrics(items: list[dict], responses: dict[str, dict]) -> dict[str, 
             "routes_total": len(routes), "normal_routes": len(normal),
             "boundary_routes": len(boundary), "total_citations": total_cites,
             "correct_citations": correct_cites,
+            "boundary_per_tool": boundary_per_tool,
         },
     }

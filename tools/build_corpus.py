@@ -1,9 +1,9 @@
-"""Build corpus.jsonl + fixtures/baseline_answers.json for the assistant evaluation.
+"""Build corpus.jsonl for the assistant evaluation.
 
-Deterministic builder: re-running it reproduces both files byte-for-byte.
+Deterministic builder: re-running it reproduces corpus.jsonl byte-for-byte.
 The corpus is fully fictional (member-space platform, synthetic companies).
-Baseline answers replay a file-backed stub; deliberate defect entries (ids
-prefixed D1..D11 in comments) produce the first-round error analysis.
+First-round answers are produced by the evaluated assistant (mock_assistant
+over the fixed stubs), NOT by this builder.
 """
 
 from __future__ import annotations
@@ -325,109 +325,6 @@ ROUTES += [
 ALL_ITEMS = KB_ALL + ROUTES
 assert len(KB_ALL) == 80 and len(ROUTES) == 40 and len(ALL_ITEMS) == 120
 
-# ------------------------------------------------- baseline answers (replay)
-
-def kb_answer(points, docs, refused=False, ft=None, tt=None):
-    idx = ft if ft is not None else 0
-    return {"answer_points": points, "cited_doc_ids": docs, "refused": refused,
-            "first_token_ms": ft or 0, "total_ms": tt or 0}
-
-def rt_answer(tool=None, params=None, rejected=False, reason=None, ft=None, tt=None):
-    return {"selected_tool": tool, "params": params or {}, "rejected": rejected,
-            "reject_reason": reason,
-            "first_token_ms": ft or 0, "total_ms": tt or 0}
-
-def lat(i):
-    return 120 + (i % 7) * 20, 640 + (i % 5) * 90
-
-answers = []
-DEFECTS = {
-    # D1: citation outside annotated set (multi-cited one wrong doc)
-    "KB-SOP-011": {"failure_class": "citation_id_mismatch",
-                   "fix_category": "retrieval-filter-tightening",
-                   "note": "multi-doc answer cited an extra doc outside the annotation"},
-    # D2: citation outside annotated set
-    "KB-BEN-005": {"failure_class": "citation_id_mismatch",
-                   "fix_category": "retrieval-filter-tightening",
-                   "note": "cited DOC-GRADE alongside DOC-BENEFIT; DOC-GRADE not annotated"},
-    # D3: missing expected point
-    "KB-SOP-014": {"failure_class": "point_miss", "fix_category": "answer-composition",
-                   "note": "second expected point dropped"},
-    # D4: missing expected point
-    "KB-SPC-013": {"failure_class": "point_miss", "fix_category": "answer-composition",
-                   "note": "ten-coupon price point dropped"},
-    # D5: no-answer item answered instead of refused
-    "KB-NA-003": {"failure_class": "boundary_misclassification", "fix_category": "refusal-gate",
-                  "note": "hall capacity not in KB; answered a guessed figure"},
-    # D6: answerable item refused
-    "KB-SOP-023": {"failure_class": "boundary_misclassification", "fix_category": "refusal-gate",
-                   "note": "emergency repair channel is documented but was refused"},
-    # D7/D8/D9: wrong tool selection
-    "RT-VIS-006": {"failure_class": "tool_selection_error", "fix_category": "router-training",
-                   "note": "register request routed to announce_send"},
-    "RT-REP-006": {"failure_class": "tool_selection_error", "fix_category": "router-training",
-                   "note": "emergency repair routed to room_book"},
-    "RT-ANN-005": {"failure_class": "tool_selection_error", "fix_category": "router-training",
-                   "note": "member-dynamics post routed to member_lookup"},
-    # D10/D11: parameter slot errors
-    "RT-ROOM-002": {"failure_class": "parameter_slot_error", "fix_category": "slot-filling",
-                    "note": "date normalized incorrectly"},
-    "RT-MBR-004": {"failure_class": "parameter_slot_error", "fix_category": "slot-filling",
-                   "note": "field slot filled with wrong value"},
-}
-
-i = 0
-for it in ALL_ITEMS:
-    ft, tt = lat(i)
-    i += 1
-    ann = it["annotations"]
-    if it["kind"] == "kb_qa":
-        if it["id"] == "KB-SOP-011":  # D1
-            resp = kb_answer(["邀请会员在小程序登记车牌", "访客车辆按地库公示标准计时收费"],
-                             ["SOP-VISITOR", "DOC-NETWORK"], ft=ft, tt=tt)
-        elif it["id"] == "KB-BEN-005":  # D2
-            resp = kb_answer(["超出部分按会议室时租标准计费"],
-                             ["DOC-BENEFIT", "DOC-GRADE"], ft=ft, tt=tt)
-        elif it["id"] == "KB-SOP-014":  # D3
-            resp = kb_answer(["一般投诉 3 个工作日内办结"], ["SOP-COMPLAINT"], ft=ft, tt=tt)
-        elif it["id"] == "KB-SPC-013":  # D4
-            resp = kb_answer(["咖啡单次券 30 元/张"], ["DOC-WATERBAR"], ft=ft, tt=tt)
-        elif it["id"] == "KB-NA-003":  # D5
-            resp = kb_answer(["翠竹厅最多可容纳 60 人"], ["SOP-ROOM"], ft=ft, tt=tt)
-        elif it["id"] == "KB-SOP-023":  # D6
-            resp = kb_answer([], [], refused=True, ft=ft, tt=tt)
-        elif ann["answerable"]:
-            resp = kb_answer(list(ann["expected_points"]), list(ann["expected_doc_ids"]),
-                             ft=ft, tt=tt)
-        else:
-            resp = kb_answer([], [], refused=True, ft=ft, tt=tt)
-    else:
-        if ann["expect_reject"]:
-            resp = rt_answer(rejected=True, reason="cross-boundary request refused",
-                             ft=ft, tt=tt)
-        elif it["id"] == "RT-VIS-006":  # D7
-            resp = rt_answer(tool="announce_send", params={"channel": "会员动态", "title": "访客登记"},
-                             ft=ft, tt=tt)
-        elif it["id"] == "RT-REP-006":  # D8
-            resp = rt_answer(tool="room_book", params={"room": "会议室门禁", "date": "今天", "start": "报修"},
-                             ft=ft, tt=tt)
-        elif it["id"] == "RT-ANN-005":  # D9
-            resp = rt_answer(tool="member_lookup", params={"member_org": "本企业", "field": "会员动态"},
-                             ft=ft, tt=tt)
-        elif it["id"] == "RT-ROOM-002":  # D10
-            resp = rt_answer(tool="room_book", params={"room": "兰亭", "date": "01/12/2026", "start": "10:00"},
-                             ft=ft, tt=tt)
-        elif it["id"] == "RT-MBR-004":  # D11
-            resp = rt_answer(tool="member_lookup", params={"member_org": "本企业", "field": "年费有效期"},
-                             ft=ft, tt=tt)
-        else:
-            resp = rt_answer(tool=ann["expected_tool"], params=dict(ann["expected_params"]),
-                             ft=ft, tt=tt)
-    entry = {"item_id": it["id"], "response": resp}
-    if it["id"] in DEFECTS:
-        entry.update(DEFECTS[it["id"]])
-    answers.append(entry)
-
 # ------------------------------------------------------------------- write
 
 corpus_path = ROOT / "corpus.jsonl"
@@ -435,13 +332,3 @@ with corpus_path.open("w", encoding="utf-8") as f:
     for it in ALL_ITEMS:
         f.write(json.dumps(it, ensure_ascii=False, sort_keys=True) + "\n")
 
-answers_path = ROOT / "fixtures" / "baseline_answers.json"
-answers_path.parent.mkdir(parents=True, exist_ok=True)
-answers_path.write_text(
-    json.dumps({"answers": answers, "note": "file-backed baseline replay; latency values are fixed stub numbers, not real-model measurements"},
-               ensure_ascii=False, indent=1),
-    encoding="utf-8")
-
-print(f"corpus items: {len(ALL_ITEMS)} (qa {len(KB_ALL)}, routes {len(ROUTES)})")
-print(f"baseline answers: {len(answers)}; defects: {len(DEFECTS)}")
-print(f"wrote {corpus_path.name} and {answers_path.relative_to(ROOT)}")
