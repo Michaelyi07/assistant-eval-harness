@@ -1,0 +1,1685 @@
+{
+ "answers": [
+  {
+   "item_id": "KB-SOP-001",
+   "response": {
+    "answer_points": [
+     "在小程序选择日期与时段提交预订",
+     "确认通知在 10 分钟内发出"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SOP-002",
+   "response": {
+    "answer_points": [
+     "开始前 2 小时以外可免费取消",
+     "2 小时以内的取消联系前台登记"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-003",
+   "response": {
+    "answer_points": [
+     "白板擦净并关闭设备",
+     "桌椅恢复原位"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SOP-004",
+   "response": {
+    "answer_points": [
+     "联系前台确认空闲时段",
+     "经确认后系统补录时长"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SOP-005",
+   "response": {
+    "answer_points": [
+     "向前台登记领取",
+     "用后当日归还"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SOP-006",
+   "response": {
+    "answer_points": [
+     "确认通知在 10 分钟内发出"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SOP-007",
+   "response": {
+    "answer_points": [
+     "提前在小程序提交访客信息",
+     "访客到前台出示登记码换取访客牌"
+    ],
+    "cited_doc_ids": [
+     "SOP-VISITOR"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-008",
+   "response": {
+    "answer_points": [
+     "访客牌当日有效",
+     "离园时交回前台"
+    ],
+    "cited_doc_ids": [
+     "SOP-VISITOR"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SOP-009",
+   "response": {
+    "answer_points": [
+     "访客须由邀请会员全程陪同"
+    ],
+    "cited_doc_ids": [
+     "SOP-VISITOR"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SOP-010",
+   "response": {
+    "answer_points": [
+     "未登记访客由前台现场补录",
+     "补录后领取访客牌"
+    ],
+    "cited_doc_ids": [
+     "SOP-VISITOR"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SOP-011",
+   "response": {
+    "answer_points": [
+     "邀请会员在小程序登记车牌",
+     "访客车辆按地库公示标准计时收费"
+    ],
+    "cited_doc_ids": [
+     "SOP-VISITOR",
+     "DOC-NETWORK"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 640
+   },
+   "failure_class": "citation_id_mismatch",
+   "fix_category": "retrieval-filter-tightening",
+   "note": "multi-doc answer cited an extra doc outside the annotation"
+  },
+  {
+   "item_id": "KB-SOP-012",
+   "response": {
+    "answer_points": [
+     "小程序意见反馈提交",
+     "或到三楼客户成功部当面登记"
+    ],
+    "cited_doc_ids": [
+     "SOP-COMPLAINT"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-013",
+   "response": {
+    "answer_points": [
+     "受理后 1 个工作日内响应"
+    ],
+    "cited_doc_ids": [
+     "SOP-COMPLAINT"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SOP-014",
+   "response": {
+    "answer_points": [
+     "一般投诉 3 个工作日内办结"
+    ],
+    "cited_doc_ids": [
+     "SOP-COMPLAINT"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 910
+   },
+   "failure_class": "point_miss",
+   "fix_category": "answer-composition",
+   "note": "second expected point dropped"
+  },
+  {
+   "item_id": "KB-SOP-015",
+   "response": {
+    "answer_points": [
+     "处理结果在小程序消息中心推送"
+    ],
+    "cited_doc_ids": [
+     "SOP-COMPLAINT"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SOP-016",
+   "response": {
+    "answer_points": [
+     "营业执照复印件",
+     "经办人名片与入会申请表"
+    ],
+    "cited_doc_ids": [
+     "SOP-ONBOARD"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SOP-017",
+   "response": {
+    "answer_points": [
+     "招商部初审",
+     "运营部复核后开通会员账号"
+    ],
+    "cited_doc_ids": [
+     "SOP-ONBOARD"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-018",
+   "response": {
+    "answer_points": [
+     "招商部退回补充",
+     "补齐后重新提交"
+    ],
+    "cited_doc_ids": [
+     "SOP-ONBOARD"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SOP-019",
+   "response": {
+    "answer_points": [
+     "复核通过后 1 个工作日内开通"
+    ],
+    "cited_doc_ids": [
+     "SOP-ONBOARD"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SOP-020",
+   "response": {
+    "answer_points": [
+     "在小程序报修入口提交",
+     "IT 或物业 30 分钟内响应"
+    ],
+    "cited_doc_ids": [
+     "SOP-REPAIR"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SOP-021",
+   "response": {
+    "answer_points": [
+     "超过 2 小时未处理可在小程序催单",
+     "催单后 15 分钟内须响应"
+    ],
+    "cited_doc_ids": [
+     "SOP-REPAIR"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SOP-022",
+   "response": {
+    "answer_points": [
+     "报修完成后须在小程序确认验收",
+     "未确认 24 小时后自动关闭"
+    ],
+    "cited_doc_ids": [
+     "SOP-REPAIR"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-023",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 140,
+    "total_ms": 820
+   },
+   "failure_class": "boundary_misclassification",
+   "fix_category": "refusal-gate",
+   "note": "emergency repair channel is documented but was refused"
+  },
+  {
+   "item_id": "KB-SOP-024",
+   "response": {
+    "answer_points": [
+     "使用桌面 HDMI 线或无线投屏器",
+     "配对码显示在屏幕右上角"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SOP-025",
+   "response": {
+    "answer_points": [
+     "在小程序报修入口提交",
+     "IT 支持 30 分钟内响应"
+    ],
+    "cited_doc_ids": [
+     "SOP-REPAIR"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SOP-026",
+   "response": {
+    "answer_points": [
+     "开机后选择预定的会议号接入",
+     "使用完毕关机并归位遥控器"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SOP-027",
+   "response": {
+    "answer_points": [
+     "会议室仅限本企业预订",
+     "跨企业使用须由对方会员账号自行预订"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SOP-028",
+   "response": {
+    "answer_points": [
+     "由企业管理员在小程序提交变更",
+     "运营部复核后生效"
+    ],
+    "cited_doc_ids": [
+     "SOP-ONBOARD"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SOP-029",
+   "response": {
+    "answer_points": [
+     "处理中投诉可联系客户成功部撤回",
+     "已办结投诉不可撤回"
+    ],
+    "cited_doc_ids": [
+     "SOP-COMPLAINT"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SOP-030",
+   "response": {
+    "answer_points": [
+     "处理前可在小程序撤回重报",
+     "已派单的工单联系物业修改"
+    ],
+    "cited_doc_ids": [
+     "SOP-REPAIR"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SPC-001",
+   "response": {
+    "answer_points": [
+     "会员企业车辆凭车牌白名单免费入场",
+     "每日首次入场 4 小时内免费"
+    ],
+    "cited_doc_ids": [
+     "DOC-PARKING"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SPC-002",
+   "response": {
+    "answer_points": [
+     "按地库入口公示的标准计时收费"
+    ],
+    "cited_doc_ids": [
+     "DOC-PARKING"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SPC-003",
+   "response": {
+    "answer_points": [
+     "地库 B1 与 B2 层"
+    ],
+    "cited_doc_ids": [
+     "DOC-PARKING"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SPC-004",
+   "response": {
+    "answer_points": [
+     "企业管理员在小程序提交车牌",
+     "物业复核后加入白名单"
+    ],
+    "cited_doc_ids": [
+     "DOC-PARKING"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SPC-005",
+   "response": {
+    "answer_points": [
+     "会员网络 SSID 为 Member-Office",
+     "账号为会员手机号"
+    ],
+    "cited_doc_ids": [
+     "DOC-NETWORK"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SPC-006",
+   "response": {
+    "answer_points": [
+     "访客网络每日限速 10Mbps",
+     "仅供临时上网使用"
+    ],
+    "cited_doc_ids": [
+     "DOC-NETWORK"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SPC-007",
+   "response": {
+    "answer_points": [
+     "初始密码在入驻欢迎邮件中",
+     "也可联系 IT 支持重置"
+    ],
+    "cited_doc_ids": [
+     "DOC-NETWORK"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SPC-008",
+   "response": {
+    "answer_points": [
+     "会议室桌面提供有线网口",
+     "接入后自动获取地址"
+    ],
+    "cited_doc_ids": [
+     "DOC-NETWORK"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SPC-009",
+   "response": {
+    "answer_points": [
+     "A4 黑白打印 0.2 元/页"
+    ],
+    "cited_doc_ids": [
+     "DOC-PRINT"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SPC-010",
+   "response": {
+    "answer_points": [
+     "A4 彩色打印 1.5 元/页"
+    ],
+    "cited_doc_ids": [
+     "DOC-PRINT"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SPC-011",
+   "response": {
+    "answer_points": [
+     "A3 按 A4 的两倍计费"
+    ],
+    "cited_doc_ids": [
+     "DOC-PRINT"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SPC-012",
+   "response": {
+    "answer_points": [
+     "使用一楼独立打印间",
+     "用后取走原件与打印件"
+    ],
+    "cited_doc_ids": [
+     "DOC-PRINT"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SPC-013",
+   "response": {
+    "answer_points": [
+     "咖啡单次券 30 元/张"
+    ],
+    "cited_doc_ids": [
+     "DOC-WATERBAR"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 820
+   },
+   "failure_class": "point_miss",
+   "fix_category": "answer-composition",
+   "note": "ten-coupon price point dropped"
+  },
+  {
+   "item_id": "KB-SPC-014",
+   "response": {
+    "answer_points": [
+     "水吧营业时间为工作日 08:00 至 18:00"
+    ],
+    "cited_doc_ids": [
+     "DOC-WATERBAR"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SPC-015",
+   "response": {
+    "answer_points": [
+     "券仅限本人使用"
+    ],
+    "cited_doc_ids": [
+     "DOC-WATERBAR"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-SPC-016",
+   "response": {
+    "answer_points": [
+     "不计入会员等级评定"
+    ],
+    "cited_doc_ids": [
+     "DOC-WATERBAR"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-SPC-017",
+   "response": {
+    "answer_points": [
+     "周末开放时间为 09:00 至 17:00"
+    ],
+    "cited_doc_ids": [
+     "DOC-HOURS"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-SPC-018",
+   "response": {
+    "answer_points": [
+     "工作日开放 07:30 至 21:00"
+    ],
+    "cited_doc_ids": [
+     "DOC-HOURS"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-SPC-019",
+   "response": {
+    "answer_points": [
+     "法定节假日安排另行公告",
+     "由物业提前 3 天在会员端发布"
+    ],
+    "cited_doc_ids": [
+     "DOC-HOURS"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-SPC-020",
+   "response": {
+    "answer_points": [
+     "临时工位使用时间为工作日 08:30 至 19:30"
+    ],
+    "cited_doc_ids": [
+     "DOC-HOURS"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-BEN-001",
+   "response": {
+    "answer_points": [
+     "独立储物柜一间",
+     "每月 4 小时免费会议室时长",
+     "招商资源对接优先排期"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-BEN-002",
+   "response": {
+    "answer_points": [
+     "每月 1 小时免费会议室时长",
+     "公共储物柜使用"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-BEN-003",
+   "response": {
+    "answer_points": [
+     "旗舰会员享独立储物柜一间",
+     "标准会员使用公共储物柜"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-BEN-004",
+   "response": {
+    "answer_points": [
+     "免费会议室时长当月有效",
+     "不结转至下月"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-BEN-005",
+   "response": {
+    "answer_points": [
+     "超出部分按会议室时租标准计费"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT",
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 1000
+   },
+   "failure_class": "citation_id_mismatch",
+   "fix_category": "retrieval-filter-tightening",
+   "note": "cited DOC-GRADE alongside DOC-BENEFIT; DOC-GRADE not annotated"
+  },
+  {
+   "item_id": "KB-BEN-006",
+   "response": {
+    "answer_points": [
+     "权益适用于会员企业在册员工",
+     "由企业管理员维护在册名单"
+    ],
+    "cited_doc_ids": [
+     "DOC-BENEFIT"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-BEN-007",
+   "response": {
+    "answer_points": [
+     "标准会员年费 6800 元/年",
+     "旗舰会员年费 12800 元/年"
+    ],
+    "cited_doc_ids": [
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-BEN-008",
+   "response": {
+    "answer_points": [
+     "年费按自然年缴纳"
+    ],
+    "cited_doc_ids": [
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-BEN-009",
+   "response": {
+    "answer_points": [
+     "不含活动场地加购费用"
+    ],
+    "cited_doc_ids": [
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 160,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-BEN-010",
+   "response": {
+    "answer_points": [
+     "会员等级每年评定一次",
+     "由运营部根据上一年度使用情况确定"
+    ],
+    "cited_doc_ids": [
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 180,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-BEN-011",
+   "response": {
+    "answer_points": [
+     "年费如有调整提前 30 天在会员端公告"
+    ],
+    "cited_doc_ids": [
+     "DOC-GRADE"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-BEN-012",
+   "response": {
+    "answer_points": [
+     "十次券售价 260 元/套"
+    ],
+    "cited_doc_ids": [
+     "DOC-COUPON"
+    ],
+    "refused": false,
+    "first_token_ms": 220,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-BEN-013",
+   "response": {
+    "answer_points": [
+     "咖啡单次券售价 30 元/张"
+    ],
+    "cited_doc_ids": [
+     "DOC-COUPON"
+    ],
+    "refused": false,
+    "first_token_ms": 240,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-BEN-014",
+   "response": {
+    "answer_points": [
+     "未使用的券可在购买后 7 天内原渠道退回"
+    ],
+    "cited_doc_ids": [
+     "DOC-COUPON"
+    ],
+    "refused": false,
+    "first_token_ms": 120,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-BEN-015",
+   "response": {
+    "answer_points": [
+     "水吧下单时出示券码核销"
+    ],
+    "cited_doc_ids": [
+     "DOC-COUPON"
+    ],
+    "refused": false,
+    "first_token_ms": 140,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-NA-001",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 160,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-NA-002",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 180,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-NA-003",
+   "response": {
+    "answer_points": [
+     "翠竹厅最多可容纳 60 人"
+    ],
+    "cited_doc_ids": [
+     "SOP-ROOM"
+    ],
+    "refused": false,
+    "first_token_ms": 200,
+    "total_ms": 820
+   },
+   "failure_class": "boundary_misclassification",
+   "fix_category": "refusal-gate",
+   "note": "hall capacity not in KB; answered a guessed figure"
+  },
+  {
+   "item_id": "KB-NA-004",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 220,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-NA-005",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 240,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-NA-006",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 120,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-NA-007",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 140,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-NA-008",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 160,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-NA-009",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 180,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-NA-010",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 200,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "KB-NA-011",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 220,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "KB-NA-012",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 240,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "KB-NA-013",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 120,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "KB-NA-014",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 140,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "KB-NA-015",
+   "response": {
+    "answer_points": [],
+    "cited_doc_ids": [],
+    "refused": true,
+    "first_token_ms": 160,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-ROOM-001",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "翠竹厅",
+     "date": "明天",
+     "start": "14:00"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 180,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-ROOM-002",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "兰亭",
+     "date": "01/12/2026",
+     "start": "10:00"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 200,
+    "total_ms": 730
+   },
+   "failure_class": "parameter_slot_error",
+   "fix_category": "slot-filling",
+   "note": "date normalized incorrectly"
+  },
+  {
+   "item_id": "RT-ROOM-003",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "大会议室",
+     "date": "周四",
+     "start": "15:00"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 220,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-ROOM-004",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "第一会议室",
+     "date": "周五",
+     "start": "09:00"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 240,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-ROOM-005",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "兰亭",
+     "date": "周三",
+     "start": "原时间"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 120,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-ROOM-006",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "我的预订",
+     "date": "明天",
+     "start": "取消"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 140,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-ROOM-007",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 160,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "RT-ROOM-008",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 180,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-MBR-001",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "云帆科技",
+     "field": "等级"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 200,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-MBR-002",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "年费有效期"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 220,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-MBR-003",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "在册员工"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 240,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-MBR-004",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "年费有效期"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 120,
+    "total_ms": 730
+   },
+   "failure_class": "parameter_slot_error",
+   "fix_category": "slot-filling",
+   "note": "field slot filled with wrong value"
+  },
+  {
+   "item_id": "RT-MBR-005",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "免费时长余额"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 140,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-MBR-006",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "经办人"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 160,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-MBR-007",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 180,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-MBR-008",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 200,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-VIS-001",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "张先生",
+     "visit_date": "明天"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 220,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "RT-VIS-002",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "李女士",
+     "visit_date": "周三"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 240,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-VIS-003",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "王顾问",
+     "visit_date": "周五"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 120,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-VIS-004",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "赵经理",
+     "visit_date": "今天"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 140,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-VIS-005",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "来访客户",
+     "visit_date": "今天"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 160,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-VIS-006",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "会员动态",
+     "title": "访客登记"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 180,
+    "total_ms": 730
+   },
+   "failure_class": "tool_selection_error",
+   "fix_category": "router-training",
+   "note": "register request routed to announce_send"
+  },
+  {
+   "item_id": "RT-VIS-007",
+   "response": {
+    "selected_tool": "visitor_register",
+    "params": {
+     "visitor_name": "李女士",
+     "visit_date": "明天"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 200,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-VIS-008",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 220,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-REP-001",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "301 会议室",
+     "issue": "投影仪无信号"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 240,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-REP-002",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "本企业工位",
+     "issue": "灯光闪烁"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 120,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-REP-003",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "茶水间",
+     "issue": "水龙头漏水"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 140,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "RT-REP-004",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "我的工单",
+     "issue": "进度查询"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 160,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-REP-005",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "二楼打印间",
+     "issue": "打印机卡纸"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 180,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-REP-006",
+   "response": {
+    "selected_tool": "room_book",
+    "params": {
+     "room": "会议室门禁",
+     "date": "今天",
+     "start": "报修"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 200,
+    "total_ms": 1000
+   },
+   "failure_class": "tool_selection_error",
+   "fix_category": "router-training",
+   "note": "emergency repair routed to room_book"
+  },
+  {
+   "item_id": "RT-REP-007",
+   "response": {
+    "selected_tool": "repair_ticket",
+    "params": {
+     "location": "B2 停车场",
+     "issue": "修改工单位置"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 220,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-REP-008",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 240,
+    "total_ms": 730
+   }
+  },
+  {
+   "item_id": "RT-ANN-001",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "本企业频道",
+     "title": "周五下午团建通知"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 120,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-ANN-002",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "全体员工",
+     "title": "消防演习公告"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 140,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-ANN-003",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "本部门",
+     "title": "放假安排通知"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 160,
+    "total_ms": 1000
+   }
+  },
+  {
+   "item_id": "RT-ANN-004",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "我的公告",
+     "title": "撤回昨日公告"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 180,
+    "total_ms": 640
+   }
+  },
+  {
+   "item_id": "RT-ANN-005",
+   "response": {
+    "selected_tool": "member_lookup",
+    "params": {
+     "member_org": "本企业",
+     "field": "会员动态"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 200,
+    "total_ms": 730
+   },
+   "failure_class": "tool_selection_error",
+   "fix_category": "router-training",
+   "note": "member-dynamics post routed to member_lookup"
+  },
+  {
+   "item_id": "RT-ANN-006",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "行政组",
+     "title": "资产盘点通知"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 220,
+    "total_ms": 820
+   }
+  },
+  {
+   "item_id": "RT-ANN-007",
+   "response": {
+    "selected_tool": "announce_send",
+    "params": {
+     "channel": "我的公告",
+     "title": "修订重发公告"
+    },
+    "rejected": false,
+    "reject_reason": null,
+    "first_token_ms": 240,
+    "total_ms": 910
+   }
+  },
+  {
+   "item_id": "RT-ANN-008",
+   "response": {
+    "selected_tool": null,
+    "params": {},
+    "rejected": true,
+    "reject_reason": "cross-boundary request refused",
+    "first_token_ms": 120,
+    "total_ms": 1000
+   }
+  }
+ ],
+ "note": "file-backed baseline replay; latency values are fixed stub numbers, not real-model measurements"
+}

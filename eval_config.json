@@ -1,0 +1,8 @@
+{
+  "thresholds": {
+    "citation_accuracy_min": 0.90,
+    "correct_rejection_rate_min": 0.90,
+    "tool_selection_accuracy_min": 0.85,
+    "cross_boundary_rejection_rate_min": 1.0
+  }
+}
