@@ -52,6 +52,12 @@ python run_eval.py --config eval_config.json --corpus corpus.jsonl --answerer my
 python run_eval.py --config eval_config.json --corpus corpus.jsonl \
     --answerer-endpoint http://127.0.0.1:8000/v1/answer
 
+# thresholds: eval_config.json is the default; per the unified technical
+# agreement (configuration from environment variables) they can be overridden
+# with an env JSON object, e.g.
+#   EVAL_THRESHOLDS_JSON='{"citation_accuracy_min": 0.95}'
+# The harness holds no secrets and sends no data overseas.
+
 # regenerate errors.md from the run's error records
 python -c "from assistant_eval.errors_md import load_errors, write_errors; \
 write_errors(load_errors('errors.jsonl'), 'errors.md')"

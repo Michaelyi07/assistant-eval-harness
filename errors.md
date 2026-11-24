@@ -1,6 +1,6 @@
 # 首轮典型错误分析
 
-错误条目共 30 条，全部来自被测作答方（mock 助手，基于固定桩）实际输出与标注的不匹配记录；原因分类由不匹配内容推导，无预设标签。
+错误条目共 26 条，全部来自被测作答方（mock 助手，基于固定桩）实际输出与标注的不匹配记录；原因分类由不匹配内容推导，无预设标签。
 
 ## 1. KB-SOP-025
 
@@ -11,9 +11,9 @@
   {
     "answer_points": [],
     "cited_doc_ids": [],
-    "first_token_ms": 0.091,
+    "first_token_ms": 0.093,
     "refused": true,
-    "total_ms": 0.091
+    "total_ms": 0.093
   }
   ```
 - 判定：answerable item was refused；missing expected points: ['在小程序报修入口提交', 'IT 支持 30 分钟内响应']
@@ -34,9 +34,9 @@
     "cited_doc_ids": [
       "SOP-REPAIR"
     ],
-    "first_token_ms": 0.13,
+    "first_token_ms": 0.135,
     "refused": false,
-    "total_ms": 0.131
+    "total_ms": 0.136
   }
   ```
 - 判定：missing expected points: ['处理前可在小程序撤回重报', '已派单的工单联系物业修改']
@@ -57,9 +57,9 @@
     "cited_doc_ids": [
       "DOC-PARKING"
     ],
-    "first_token_ms": 0.1,
+    "first_token_ms": 0.104,
     "refused": false,
-    "total_ms": 0.101
+    "total_ms": 0.105
   }
   ```
 - 判定：missing expected points: ['会员企业车辆凭车牌白名单免费入场']
@@ -80,9 +80,9 @@
     "cited_doc_ids": [
       "DOC-PARKING"
     ],
-    "first_token_ms": 0.137,
+    "first_token_ms": 0.138,
     "refused": false,
-    "total_ms": 0.137
+    "total_ms": 0.138
   }
   ```
 - 判定：missing expected points: ['按地库入口公示的标准计时收费']
@@ -109,9 +109,9 @@
     "cited_doc_ids": [
       "DOC-BENEFIT"
     ],
-    "first_token_ms": 0.15,
+    "first_token_ms": 0.155,
     "refused": false,
-    "total_ms": 0.151
+    "total_ms": 0.156
   }
   ```
 - 判定：missing expected points: ['地库 B1 与 B2 层']；citations outside annotated set: ['DOC-BENEFIT']
@@ -134,9 +134,9 @@
     "cited_doc_ids": [
       "SOP-ROOM"
     ],
-    "first_token_ms": 0.104,
+    "first_token_ms": 0.107,
     "refused": false,
-    "total_ms": 0.105
+    "total_ms": 0.107
   }
   ```
 - 判定：missing expected points: ['会议室桌面提供有线网口', '接入后自动获取地址']；citations outside annotated set: ['SOP-ROOM']
@@ -156,9 +156,9 @@
     "cited_doc_ids": [
       "DOC-WATERBAR"
     ],
-    "first_token_ms": 0.112,
+    "first_token_ms": 0.114,
     "refused": false,
-    "total_ms": 0.113
+    "total_ms": 0.115
   }
   ```
 - 判定：missing expected points: ['券仅限本人使用']
@@ -182,9 +182,9 @@
     "cited_doc_ids": [
       "SOP-ROOM"
     ],
-    "first_token_ms": 0.146,
+    "first_token_ms": 0.217,
     "refused": false,
-    "total_ms": 0.146
+    "total_ms": 0.218
   }
   ```
 - 判定：missing expected points: ['超出部分按会议室时租标准计费']；citations outside annotated set: ['SOP-ROOM']
@@ -204,9 +204,9 @@
     "cited_doc_ids": [
       "DOC-WATERBAR"
     ],
-    "first_token_ms": 0.117,
+    "first_token_ms": 0.13,
     "refused": false,
-    "total_ms": 0.118
+    "total_ms": 0.13
   }
   ```
 - 判定：missing expected points: ['咖啡单次券售价 30 元/张']；citations outside annotated set: ['DOC-WATERBAR']
@@ -222,9 +222,9 @@
   {
     "answer_points": [],
     "cited_doc_ids": [],
-    "first_token_ms": 0.033,
+    "first_token_ms": 0.04,
     "refused": true,
-    "total_ms": 0.034
+    "total_ms": 0.041
   }
   ```
 - 判定：answerable item was refused；missing expected points: ['未使用的券可在购买后 7 天内原渠道退回']
@@ -248,9 +248,9 @@
     "cited_doc_ids": [
       "DOC-HOURS"
     ],
-    "first_token_ms": 0.162,
+    "first_token_ms": 0.325,
     "refused": false,
-    "total_ms": 0.163
+    "total_ms": 0.326
   }
   ```
 - 判定：no-answer item was answered instead of refused
@@ -264,7 +264,7 @@
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.049,
+    "first_token_ms": 0.068,
     "params": {
       "date": "明天",
       "room": "翠竹厅",
@@ -273,7 +273,7 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "room_book",
-    "total_ms": 0.049
+    "total_ms": 0.068
   }
   ```
 - 判定：parameter mismatch: got {'room': '翠竹厅', 'date': '明天', 'start': ''}, expected {'date': '明天', 'room': '翠竹厅', 'start': '14:00'}
@@ -287,7 +287,7 @@
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.032,
+    "first_token_ms": 0.036,
     "params": {
       "date": "",
       "room": "兰亭",
@@ -296,90 +296,21 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "room_book",
-    "total_ms": 0.033
+    "total_ms": 0.036
   }
   ```
 - 判定：parameter mismatch: got {'room': '兰亭', 'date': '', 'start': ''}, expected {'date': '2026-12-01', 'room': '兰亭', 'start': '10:00'}
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 14. RT-ROOM-003
-
-- 问题/路由：周四下午三点后我要用大会议室一小时
-- 期望：{"expected_params": {"date": "周四", "room": "大会议室", "start": "15:00"}, "expected_tool": "room_book"}
-- 错误输出（被测作答方实际输出，逐字）：
-  ```json
-  {
-    "first_token_ms": 0.023,
-    "params": {
-      "date": "周四",
-      "room": "大会议室",
-      "start": ""
-    },
-    "reject_reason": null,
-    "rejected": false,
-    "selected_tool": "room_book",
-    "total_ms": 0.023
-  }
-  ```
-- 判定：parameter mismatch: got {'room': '大会议室', 'date': '周四', 'start': ''}, expected {'date': '周四', 'room': '大会议室', 'start': '15:00'}
-- 原因分类：parameter_error
-- 修复类别：slot-filling
-
-## 15. RT-ROOM-004
-
-- 问题/路由：帮客服部订周五上午九点的第一会议室
-- 期望：{"expected_params": {"date": "周五", "room": "第一会议室", "start": "09:00"}, "expected_tool": "room_book"}
-- 错误输出（被测作答方实际输出，逐字）：
-  ```json
-  {
-    "first_token_ms": 0.02,
-    "params": {
-      "date": "周五",
-      "room": "第一会议室",
-      "start": ""
-    },
-    "reject_reason": null,
-    "rejected": false,
-    "selected_tool": "room_book",
-    "total_ms": 0.02
-  }
-  ```
-- 判定：parameter mismatch: got {'room': '第一会议室', 'date': '周五', 'start': ''}, expected {'date': '周五', 'room': '第一会议室', 'start': '09:00'}
-- 原因分类：parameter_error
-- 修复类别：slot-filling
-
-## 16. RT-ROOM-006
-
-- 问题/路由：取消我明天的会议室预订
-- 期望：{"expected_params": {"date": "明天", "room": "我的预订", "start": "取消"}, "expected_tool": "room_book"}
-- 错误输出（被测作答方实际输出，逐字）：
-  ```json
-  {
-    "first_token_ms": 0.016,
-    "params": {
-      "date": "明天",
-      "room": "",
-      "start": "取消"
-    },
-    "reject_reason": null,
-    "rejected": false,
-    "selected_tool": "room_book",
-    "total_ms": 0.017
-  }
-  ```
-- 判定：parameter mismatch: got {'room': '', 'date': '明天', 'start': '取消'}, expected {'date': '明天', 'room': '我的预订', 'start': '取消'}
-- 原因分类：parameter_error
-- 修复类别：slot-filling
-
-## 17. RT-VIS-005
+## 14. RT-VIS-005
 
 - 问题/路由：我替临时来访的客户补录一个访客登记
 - 期望：{"expected_params": {"visit_date": "今天", "visitor_name": "来访客户"}, "expected_tool": "visitor_register"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.015,
+    "first_token_ms": 0.016,
     "params": {
       "visit_date": "",
       "visitor_name": ""
@@ -394,14 +325,14 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 18. RT-REP-001
+## 15. RT-REP-001
 
 - 问题/路由：301 会议室投影仪没信号，帮我报修
 - 期望：{"expected_params": {"issue": "投影仪无信号", "location": "301 会议室"}, "expected_tool": "repair_ticket"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.017,
+    "first_token_ms": 0.019,
     "params": {
       "issue": "",
       "location": "301 会议室"
@@ -409,21 +340,21 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "repair_ticket",
-    "total_ms": 0.018
+    "total_ms": 0.019
   }
   ```
 - 判定：parameter mismatch: got {'location': '301 会议室', 'issue': ''}, expected {'issue': '投影仪无信号', 'location': '301 会议室'}
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 19. RT-REP-002
+## 16. RT-REP-002
 
 - 问题/路由：我们工位的灯闪烁，提个报修单
 - 期望：{"expected_params": {"issue": "灯光闪烁", "location": "本企业工位"}, "expected_tool": "repair_ticket"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.016,
+    "first_token_ms": 0.017,
     "params": {
       "issue": "",
       "location": ""
@@ -438,29 +369,7 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 20. RT-REP-004
-
-- 问题/路由：我上一张报修单想看下处理进度
-- 期望：{"expected_params": {"issue": "进度查询", "location": "我的工单"}, "expected_tool": "repair_ticket"}
-- 错误输出（被测作答方实际输出，逐字）：
-  ```json
-  {
-    "first_token_ms": 0.013,
-    "params": {
-      "issue": "",
-      "location": ""
-    },
-    "reject_reason": null,
-    "rejected": false,
-    "selected_tool": "repair_ticket",
-    "total_ms": 0.013
-  }
-  ```
-- 判定：parameter mismatch: got {'location': '', 'issue': ''}, expected {'issue': '进度查询', 'location': '我的工单'}
-- 原因分类：parameter_error
-- 修复类别：slot-filling
-
-## 21. RT-REP-005
+## 17. RT-REP-005
 
 - 问题/路由：二楼打印间卡纸了，帮我报修
 - 期望：{"expected_params": {"issue": "打印机卡纸", "location": "二楼打印间"}, "expected_tool": "repair_ticket"}
@@ -482,7 +391,7 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 22. RT-REP-006
+## 18. RT-REP-006
 
 - 问题/路由：会议室门禁刷不开，提一个紧急报修
 - 期望：{"expected_params": {"issue": "门禁失效", "location": "会议室门禁"}, "expected_tool": "repair_ticket"}
@@ -504,14 +413,14 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 23. RT-REP-007
+## 19. RT-REP-007
 
 - 问题/路由：把上午那张报修单的位置改成 B2 停车场
 - 期望：{"expected_params": {"issue": "修改工单位置", "location": "B2 停车场"}, "expected_tool": "repair_ticket"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.013,
+    "first_token_ms": 0.014,
     "params": {
       "issue": "",
       "location": "B2 停车场"
@@ -526,14 +435,14 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 24. RT-ANN-001
+## 20. RT-ANN-001
 
 - 问题/路由：在本企业频道发一条通知：周五下午团建
 - 期望：{"expected_params": {"channel": "本企业频道", "title": "周五下午团建通知"}, "expected_tool": "announce_send"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.014,
+    "first_token_ms": 0.015,
     "params": {
       "channel": "本企业频道",
       "title": "公告"
@@ -548,14 +457,14 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 25. RT-ANN-002
+## 21. RT-ANN-002
 
 - 问题/路由：给全体员工发个公告：明天消防演习
 - 期望：{"expected_params": {"channel": "全体员工", "title": "消防演习公告"}, "expected_tool": "announce_send"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.014,
+    "first_token_ms": 0.015,
     "params": {
       "channel": "全体员工",
       "title": "公告"
@@ -563,14 +472,14 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "announce_send",
-    "total_ms": 0.014
+    "total_ms": 0.015
   }
   ```
 - 判定：parameter mismatch: got {'channel': '全体员工', 'title': '公告'}, expected {'channel': '全体员工', 'title': '消防演习公告'}
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 26. RT-ANN-003
+## 22. RT-ANN-003
 
 - 问题/路由：在我们部门群发一条放假安排通知
 - 期望：{"expected_params": {"channel": "本部门", "title": "放假安排通知"}, "expected_tool": "announce_send"}
@@ -585,21 +494,21 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "announce_send",
-    "total_ms": 0.013
+    "total_ms": 0.014
   }
   ```
 - 判定：parameter mismatch: got {'channel': '', 'title': '公告'}, expected {'channel': '本部门', 'title': '放假安排通知'}
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 27. RT-ANN-004
+## 23. RT-ANN-004
 
 - 问题/路由：帮我把昨天的公告撤回来
 - 期望：{"expected_params": {"channel": "我的公告", "title": "撤回昨日公告"}, "expected_tool": "announce_send"}
 - 错误输出（被测作答方实际输出，逐字）：
   ```json
   {
-    "first_token_ms": 0.011,
+    "first_token_ms": 0.012,
     "params": {
       "channel": "",
       "title": "公告"
@@ -607,14 +516,14 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "announce_send",
-    "total_ms": 0.012
+    "total_ms": 0.013
   }
   ```
 - 判定：parameter mismatch: got {'channel': '', 'title': '公告'}, expected {'channel': '我的公告', 'title': '撤回昨日公告'}
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 28. RT-ANN-005
+## 24. RT-ANN-005
 
 - 问题/路由：在会员动态里发一条我们公司的乔迁喜讯
 - 期望：{"expected_params": {"channel": "会员动态", "title": "乔迁喜讯"}, "expected_tool": "announce_send"}
@@ -636,7 +545,7 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 29. RT-ANN-006
+## 25. RT-ANN-006
 
 - 问题/路由：给行政组发一条资产盘点通知
 - 期望：{"expected_params": {"channel": "行政组", "title": "资产盘点通知"}, "expected_tool": "announce_send"}
@@ -658,7 +567,7 @@
 - 原因分类：parameter_error
 - 修复类别：slot-filling
 
-## 30. RT-ANN-007
+## 26. RT-ANN-007
 
 - 问题/路由：帮我把公告里的错别字改一下重新发
 - 期望：{"expected_params": {"channel": "我的公告", "title": "修订重发公告"}, "expected_tool": "announce_send"}
@@ -673,7 +582,7 @@
     "reject_reason": null,
     "rejected": false,
     "selected_tool": "announce_send",
-    "total_ms": 0.012
+    "total_ms": 0.013
   }
   ```
 - 判定：parameter mismatch: got {'channel': '', 'title': '公告'}, expected {'channel': '我的公告', 'title': '修订重发公告'}
@@ -684,7 +593,7 @@
 
 | 原因分类 | 条数 |
 |---|---|
-| parameter_error | 19 |
+| parameter_error | 15 |
 | point_miss | 6 |
 | citation_id_mismatch | 4 |
 | missed_refusal | 1 |

@@ -229,6 +229,11 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
+    # unified technical agreement: configuration comes from environment variables.
+    # The eval file is the default; EVAL_THRESHOLDS_JSON (JSON object) overrides it.
+    env_thresholds = os.environ.get("EVAL_THRESHOLDS_JSON")
+    if env_thresholds:
+        config["thresholds"].update(json.loads(env_thresholds))
     items = load_corpus(args.corpus)
     contract_problems = validate_corpus(items)
     if contract_problems:

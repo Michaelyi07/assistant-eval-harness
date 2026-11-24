@@ -40,7 +40,9 @@ TOOL_INTENTS: list[tuple[str, tuple[str, ...]]] = [
 
 ROOMS = ("翠竹厅", "兰亭", "大会议室", "第一会议室")
 DATE_PAT = re.compile(r"(\d{4}-\d{2}-\d{2}|今天|明天|后天|下周[一二三四五六日天]|周[一二三四五六日天])")
-TIME_PAT = re.compile(r"(上午|下午)?\s*(\d{1,2})[点:：时](\d{1,2})?分?")
+TIME_PAT = re.compile(r"(上午|下午)?\s*([0-9一二三四五六七八九]{1,2})[点:：时]")
+_CN_DIGIT = {"一": 1, "二": 2, "两": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7,
+             "八": 8, "九": 9}
 
 FIELDS = ("等级", "年费有效期", "在册员工", "储物柜", "免费时长余额", "经办人")
 
@@ -97,14 +99,16 @@ class MockAssistant:
             room = next((r for r in ROOMS if r in question), "")
             dm = DATE_PAT.search(question)
             date = dm.group(0) if dm else ""
+            if "取消" in question:
+                # cancellation is a distinct action slot, no start time involved
+                return {"room": room, "date": date, "action": "cancel"}
             tm = TIME_PAT.search(question)
             if tm:
-                hh = int(tm.group(2)) + (12 if tm.group(1) == "下午" and int(tm.group(2)) < 12 else 0)
-                start = f"{hh:02d}:00"
-            elif "取消" in question:
-                start = "取消"
-            elif "同一时间" in question:
-                start = "原时间"
+                raw = tm.group(2)
+                hour = int(raw) if raw.isdigit() else _CN_DIGIT.get(raw, 0)
+                if tm.group(1) == "下午" and hour < 12:
+                    hour += 12
+                start = f"{hour:02d}:00"
             else:
                 start = ""
             return {"room": room, "date": date, "start": start}
@@ -125,10 +129,10 @@ class MockAssistant:
             return {"visitor_name": nm.group(0) if nm else "",
                     "visit_date": dm.group(0) if dm else ""}
         if tool == "repair_ticket":
-            loc = next((c for c in ("301 会议室", "二楼打印间", "会议室门禁", "B2 停车场",
-                                    "茶水间", "我的工单", "本企业工位") if c in question), "")
-            issue = next((c for c in ("投影仪无信号", "灯光闪烁", "水龙头漏水", "进度查询",
-                                      "打印机卡纸", "门禁失效", "修改工单位置") if c in question), "")
+            loc = next((c for c in ("301 会议室", "二楼打印间", "会议室门禁", "B1 停车场道闸",
+                                    "B2 停车场", "茶水间", "本企业工位") if c in question), "")
+            issue = next((c for c in ("投影仪无信号", "灯光闪烁", "水龙头漏水",
+                                      "打印机卡纸", "门禁失效", "道闸失灵", "修改工单位置") if c in question), "")
             return {"location": loc, "issue": issue}
         if tool == "announce_send":
             ch = next((c for c in ("全体员工", "本企业频道", "本部门", "会员动态", "行政组",
